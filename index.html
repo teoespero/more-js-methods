@@ -27,31 +27,19 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Movie Listing</h1>
+			<h2>Comments</h2>
 			<script type="text/javascript">
 
-			var movies = {
-							title: ["Red Sparrow", "Wonder", "Wedding Crashers", "The Internship", "Starsky & Hutch", "Meet the Fockers",],
-							hasWatched: [true, true, false, true, true, true],
-							rating: [6.6,8.0,7.0,6.3,6.1,6.3],					
-							percentage:function(movieRating,scale){
-								return (movieRating/scale) * 100;
-							}
-						}
+				var comments = {};
+				comments.data = ["Good Job!", "Awesome!", "Weak", "Lame!"];
 
-					
-			var movieTitle = "";
-			var theRating = 0.0;
+				comments.print = function(){
+					this.data.forEach(function(el){
+						document.write(el + "<br>");
+					});
+				}
 
-			for (counter = 0; counter < movies.title.length; counter++){
-				movieTitle = movies.title[counter];
-				theRating = (movies.percentage(movies.rating[counter],10));
-
-				document.write("<p>");
-				document.write("<b>Movie title: </b>" + movieTitle + "<br>");
-				document.write("<b>IMDB Rating: </b>" + theRating.toFixed(2) + "<br>");
-				document.write("</p>");
-			}
+				comments.print();
 			</script>
 		</div>
 	</body>
